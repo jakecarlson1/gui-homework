@@ -1,0 +1,32 @@
+<div class="container">
+	<h1>
+		{{ title }}
+	</h1>
+	<div class="row">
+		<!-- driving loop -->
+		<div *ngFor="let movie of movies">
+			<div class="media">
+				<div class="media-left">
+					<!-- display movie poster -->
+					<a href="#">
+						<img class="media-object img-thumbnail" src="{{movie.imageUrl}}">
+					</a>
+				</div>
+				<div class="media-body">
+					<!-- movie title and year -->
+					<h4 class="media-heading">{{ movie.title }} ({{ movie.year }})</h4>
+					<!-- loop through validRatings to display stars-->
+					<span *ngFor="let i of validRatings">
+						<div class="glyphicon"
+						     [ngClass]="{'glyphicon-star': (i <= movie.rating), 
+							             'glyphicon-star-empty': (i > (movie.rating||0))}"
+							 (click)="movie.setRating(i)"></div>
+					</span>
+					<!-- rating badge -->
+					<span class="badge">{{ movie.rating }}/5</span>
+				</div>
+			</div>
+			<br /> 
+		</div>
+	</div>
+</div>

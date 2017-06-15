@@ -1,0 +1,8 @@
+Account List
+<ul>
+    <li *ngFor="let account of accounts">
+        <a [routerLink]="'/accounts/' + account.userId">
+            {{ account.name }}
+        </a>
+    </li>
+</ul>

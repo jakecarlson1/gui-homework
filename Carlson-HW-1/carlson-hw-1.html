@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Carlson HW 1</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- overriding style sheet -->
+    <link href="hw1-styles.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <!-- nav bar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">HW 1</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Schedule <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">Grades</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Update Profile</a></li>
+                            <li><a href="#">Change Password</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <section>
+        <div>
+            <button type="button" class="btn btn-primary btn-md pull-right" data-toggle="modal" data-target="#addCourse">
+            Add Course
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="addCourse" tabindex="-1" role="dialog" aria-labelledby="addCourseModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="addCourseModalLabel">Add Course</h4>
+                        </div>
+                        <div class="modal-body">
+                            <label for="sectionNumber">Section Number</label>
+                            <input type="text" class="form-control" id="sectionNumber">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#spring2017" aria-controls="spring2017" role="tab" data-toggle="tab">Spring 2017</a></li>
+                <li role="presentation"><a href="#fall2017" aria-controls="fall2017" role="tab" data-toggle="tab">Fall 2017</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="spring2017">
+                    <h2>Spring 2017</h2>
+                    <table class="table table-striped">
+                        <thead>
+                            <th>Course</th>
+                            <th>Title</th>
+                            <th>Section</th>
+                            <th>Instructor</th>
+                            <th>Days</th>
+                            <th>Times</th>
+                        </thead>
+                        <tr>
+                            <td>CSE 2341</td>
+                            <td>Data Structures</td>
+                            <td>801</td>
+                            <td>Fontenot</td>
+                            <td>MWF</td>
+                            <td>1:00-1:50PM</td>
+                        </tr>
+                        <tr>
+                            <td>CSE 3345</td>
+                            <td>GUI Design and Implementation</td>
+                            <td>801</td>
+                            <td>Lawrimore</td>
+                            <td>TuTh</td>
+                            <td>5:00-6:20PM</td>
+                        </tr>
+                    </table>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="fall2017">
+                    <h2>Fall 2017</h2>
+                    <div class="well well-sm">No classes found.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

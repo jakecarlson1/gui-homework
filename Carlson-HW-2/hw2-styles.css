@@ -1,0 +1,18 @@
+.btn.btn-default {
+    margin: 10px;
+}
+
+body > div {
+    height: 504px;
+    width: 604px;
+    margin: 10px;
+    border-color: #FFFFFF;
+    border-style: solid;
+    border-width: 2px;
+    /*background-color: lightblue;*/
+}
+
+.color_box {
+    float: left;
+    color: white;
+}

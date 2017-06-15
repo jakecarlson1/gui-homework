@@ -1,0 +1,86 @@
+<form name="movieForm"
+	  #movie_form="ngForm"
+	  class="container"
+	  *ngIf="movie"
+	  (ngSubmit)="addMovie()"
+	  novalidate>
+		<h1>
+			{{ movie.title || "New Movie" }}
+		</h1>
+		<div class="row">
+			<div class="col-md-8">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						Movie Editor
+					</div>
+					<div class="panel-body">
+						<div class="form-group">
+							<label for="movie_title">
+								Name
+							</label>
+							<input type="text"
+								id="movie_title"
+								name="movie_title"
+								class="form-control"
+								[(ngModel)]="movie.title"
+								#movie_title="ngModel"
+								required
+								pattern="([a-zA-Z 0-9]*)" />
+							<validation-messages 
+								[model]="movie_title"
+								[messages]="{
+									required: 'Movie title is required',
+									pattern: 'Movie title is invalid'}">
+							</validation-messages>
+						</div>
+					<div class="form-group">
+						<label for="movie_year">
+							Year
+						</label>
+						<input  id="movie_year"
+								name="movie_year"
+								class="form-control"
+								[(ngModel)]="movie.year"
+								#movie_year="ngModel"
+								required
+								year />
+						<validation-messages 
+							[model]="movie_year"
+							[messages]="{
+								required: 'Movie year is required',
+								year: 'Movie year is invalid'}">
+						</validation-messages>
+					</div>
+						<div class="form-group">
+						<label for="movie_image">
+							Image Path
+						</label>
+						<input  id="movie_image"
+								name="movie_image"
+								class="form-control"
+								[(ngModel)]="movie.imagePath"
+								#movie_image="ngModel"
+								pattern="[a-z0-9\/-_:.]*.(jpg|jpeg|png|gif)" />
+						<validation-messages 
+							[model]="movie_image"
+							[messages]="{
+								pattern: 'Movie image is invalid'}">
+						</validation-messages>
+					</div>
+					<br />
+					<button class="btn btn-primary"
+							type="submit"
+							[disabled]="movie_form.invalid"
+							routerLinkActive="active">
+						Update
+					</button>
+					<button class="btn btn-default"
+							routerLink="/"
+							routerLinkActive="active">
+						Return to List
+					</button>
+					</div>
+				</div>
+			</div>
+		</div>
+</form>

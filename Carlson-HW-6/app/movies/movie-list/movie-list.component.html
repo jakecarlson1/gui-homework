@@ -1,0 +1,30 @@
+<h1>Movie Database</h1>
+<button class="btn btn-primary pull-right"
+		routerLink="/add" 
+		routerLinkActive="active">
+	Add Movie
+</button>
+<span *ngIf="!movies?.length"
+	  class="well well-sm">
+	There are no movies in the database.
+</span>
+<div class="media" *ngFor="let movie of movies">
+	<span class="media-left">
+		<img [src]="movie.imagePath || 'images/blank.jpg'" alt="{{ movie.title }}" />
+	</span>
+	<div class="media-body">
+		<h4 class="media-heading" style="display: inline">
+			{{ movie.title }} ({{ movie.year }})
+		</h4>
+		<a 	class="glyphicon glyphicon-edit"
+			[routerLink]="'/edit/' + movie.id" 
+			routerLinkActive="active">
+		</a>
+		<a 	class="glyphicon glyphicon-trash"
+			(click)="this.delete(movie.id)"
+			style="color: red">
+		</a>
+		<br />
+		<rating [(rating)]="movie.rating"  (ratingRes)="updateRating(movie.id, $event)"></rating>
+	</div>
+</div>

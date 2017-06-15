@@ -1,0 +1,13 @@
+a:hover {
+	cursor: pointer;
+}
+
+.alert ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+form .ng-invalid.ng-touched {
+  background: pink;
+  border: solid 1px red;
+}

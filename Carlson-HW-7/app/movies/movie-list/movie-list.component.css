@@ -1,0 +1,17 @@
+.media-left img {
+	width: 100px;
+}
+
+.rating .glyphicon {
+	font-size: 20px;
+	top: 5px;
+}
+
+a.glyphicon:hover {
+	opacity: 1;
+}
+
+a.glyphicon {
+	opacity: 0.4;
+	margin-left: 5px;
+}
